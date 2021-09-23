@@ -81,3 +81,44 @@ for (let i =0; i < numbers.length; i++){
 }
   return message
   }
+
+  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+  /*function validParentheses(parens){
+    let leftCount = 0
+    let rightCount = 0
+    const parArr = parens.split("")
+    parArr.forEach(paren => {
+        if(paren === "("){
+            leftCount++
+        }else{
+            rightCount++
+        }
+    });
+    if(leftCount===rightCount){
+        return false
+    } return true;
+  }*/
+  function validParentheses(parens){
+    let leftCount = 0
+    let rightCount = 0
+    const parArr = parens.split("")
+    parArr.forEach(paren => {
+        if(paren === "("){
+            leftCount++
+        }else if(paren === ")"){
+            rightCount++
+        }
+    });
+  if(parens.length % 2 !== 0 ){
+    return false
+  }
+  
+    if(parens.charAt(0)===")"||parens.charAt(parens.length -1)==="(" ){
+      return false
+    }
+    if(leftCount===rightCount){
+        return true
+    } return false;
+  
+  }
