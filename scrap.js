@@ -82,7 +82,7 @@ for (let i =0; i < numbers.length; i++){
   return message
   }
 
-  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  ////////////////////////////////////////////////
 
   /*function validParentheses(parens){
     let leftCount = 0
@@ -99,7 +99,7 @@ for (let i =0; i < numbers.length; i++){
         return false
     } return true;
   }*/
-  function validParentheses(parens){
+ /* function validParentheses(parens){
     let leftCount = 0
     let rightCount = 0
     const parArr = parens.split("")
@@ -121,4 +121,14 @@ for (let i =0; i < numbers.length; i++){
         return true
     } return false;
   
+  }*/
+  function anagrams(word, words) {
+    const anagrammableWords =[]
+    words.forEach((arrWord)=>{
+      const splitArrWord = arrWord.split("").sort().join("")
+      const splitCheckWord = word.split("").sort().join("")
+      if(splitArrWord === splitCheckWord) anagrammableWords.push(arrWord)
+    })
+    return anagrammableWords
   }
+  console.log(anagrams("abba",["bbaa","ccdd","aabb"]))
