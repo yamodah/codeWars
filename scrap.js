@@ -122,7 +122,7 @@ for (let i =0; i < numbers.length; i++){
     } return false;
   
   }*/
-  function anagrams(word, words) {
+  /*function anagrams(word, words) {
     const anagrammableWords =[]
     words.forEach((arrWord)=>{
       const splitArrWord = arrWord.split("").sort().join("")
@@ -131,4 +131,14 @@ for (let i =0; i < numbers.length; i++){
     })
     return anagrammableWords
   }
-  console.log(anagrams("abba",["bbaa","ccdd","aabb"]))
+  console.log(anagrams("abba",["bbaa","ccdd","aabb"]))*/
+
+  function solution(input, markers) {
+    const removeThesePls = markers.join("|")
+    const regexForReplace = new RegExp(`[${removeThesePls}].+|\\s.*$&`,"g")
+    const oneStepStill = input.replace(regexForReplace,"")
+    //console.log(oneStepStill.split("\n"))
+    console.log(typeof oneStepStill)
+    return oneStepStill.trim()
+  }; 
+  //will not pass tests although string is equal
